@@ -1,3 +1,3 @@
 Database configuration: ../php/query.php
 
-MySQL structure: ../oopus_esgar.sql
+MySQL structure: ../esgar.sql
