@@ -4,7 +4,8 @@
 		include_once 'php/callLoginQuery.php';
 		$checkCookie = checkCookie();
 		if($GLOBALS['getPassToken']=="yes"){
-			header('Location: http://oopus.info/esgarii/editting.php') ;
+			//header('Location: http://oopus.info/esgarii/editting.php') ;
+      header('Location: http://127.0.0.1/git/esgarii/editting.php');
 		}
 		
 		ob_end_clean();
@@ -89,7 +90,7 @@ var submit = function(){
 		console.log(msg);
 		if(msg=="yes"){
 			console.log("here")
-			window.location.replace("http://oopus.info/esgarii/editting.php");
+			window.location.replace("http://127.0.0.1/git/esgarii/editting.php");
 		}else{
 			alert("Your information is not correct")
 		}

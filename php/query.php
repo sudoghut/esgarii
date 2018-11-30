@@ -1,8 +1,8 @@
 <?php
-$GLOBALS['hostOop'] = 'XXX';
-$GLOBALS['userOop'] = 'XXX';
-$GLOBALS['pwOop'] = 'XXX';
-$GLOBALS['databaseOop'] = 'XXX';
+$GLOBALS['hostOop'] = 'localhost';
+$GLOBALS['userOop'] = 'root';
+$GLOBALS['pwOop'] = '';
+$GLOBALS['databaseOop'] = 'esgar';
 
 function runQuery($query){
 	$db = new mysqli($GLOBALS['hostOop'],$GLOBALS['userOop'],$GLOBALS['pwOop'],$GLOBALS['databaseOop']);

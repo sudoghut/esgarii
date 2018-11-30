@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 12, 2018 at 11:41 AM
--- Server version: 5.5.51-38.2
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 30, 2018 at 08:04 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,14 +28,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `anno`
 --
 
-CREATE TABLE `anno` (
-  `annoid` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
+DROP TABLE IF EXISTS `anno`;
+CREATE TABLE IF NOT EXISTS `anno` (
+  `annoid` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) DEFAULT NULL,
   `sys_id` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `time_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `origin_json_blob` blob NOT NULL,
-  `new_json_blob` blob NOT NULL,
-  `anno_note` text CHARACTER SET utf8 NOT NULL
+  `origin_json` json DEFAULT NULL,
+  `new_json` json DEFAULT NULL,
+  `anno_note` text CHARACTER SET utf8,
+  PRIMARY KEY (`annoid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -44,32 +46,13 @@ CREATE TABLE `anno` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
   `notes` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `anno`
---
-ALTER TABLE `anno`
-  ADD PRIMARY KEY (`annoid`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `anno`
---
-ALTER TABLE `anno`
-  MODIFY `annoid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

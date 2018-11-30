@@ -4,9 +4,9 @@
 		$GLOBALS['getPassToken'] = 'no';
 		include_once 'php/callLoginQuery.php';
 		$checkCookie = checkCookie();
-		if($GLOBALS['getPassToken']!="yes"){
-			header('Location: http://oopus.info/esgarii/') ;
-		}
+		// if($GLOBALS['getPassToken']!="yes"){
+		// 	header('Location: http://127.0.0.1/git/esgarii/editting.php') ;
+		// }
 		/* $cookieName = $_COOKIE["cookieName"];
 		list($user,$hash) = explode("\t", $cookieName);
 		 */

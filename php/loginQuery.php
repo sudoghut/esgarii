@@ -1,6 +1,6 @@
 <?php
-$GLOBALS['cookieName'] = 'cookieName';
 include_once "query.php";
+$GLOBALS['cookieName'] = 'cookieName';
 
 function login($user, $pw){
 	@$user = secureWords($user);
@@ -33,7 +33,7 @@ function logout(){
 }
 
 function checkCookie(){
-	if (isset($GLOBALS['cookieName'])) {
+	if (isset($_COOKIE[$GLOBALS['cookieName']])) {
 		$cookieFile = $_COOKIE[$GLOBALS['cookieName']];
 		list($user,$hash) = explode("\t", $cookieFile);
 		if (checkPassword($user, $hash)==0&& $user!="") {
