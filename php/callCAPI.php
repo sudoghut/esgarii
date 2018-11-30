@@ -26,7 +26,7 @@
 		$data = $result->fetch_assoc();
 		$data = implode(";",$data);
 		//$data = base64_decode($data);
-		$data = json_encode($data);
+		$data = json_encode($data, JSON_UNESCAPED_UNICODE);
 		echo $data;
 	}else{
 		$data = file_get_contents($url);
